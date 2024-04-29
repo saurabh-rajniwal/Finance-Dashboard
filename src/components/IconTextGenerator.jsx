@@ -3,10 +3,10 @@ import React from "react";
 // import { faArrowAltCircleRight } from "@fortawesome/free-regular-svg-icons";
 import { FaArrowRight } from "react-icons/fa";
 
-function IconTextGenerator({ heading, items, count, setButton }) {
+function IconTextGenerator({ heading, items, setButton }) {
   return (
     <>
-      <div className="p-5 mx-auto">
+      <div className="bg-white p-6 rounded-2xl">
         <h2 className="font-bold mb-4 text-custom-header text-sm">{heading}</h2>
         <div>
           {items.map((item, index) => (

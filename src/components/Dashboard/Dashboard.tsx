@@ -13,6 +13,8 @@ import CustomInfo from "../CustomInfo";
 import TryAurora from "../TryAurora";
 import AreaChart from "../AreaChart";
 import StackChart from "../StackChart";
+import IconTextGenerator from "../IconTextGenerator";
+import { transfer, transactions } from "../../constants/constant";
 
 function Dashboard() {
   const handleSearch = (event) => {
@@ -40,11 +42,17 @@ function Dashboard() {
       </div>
       <div className="flex gap-5">
         <div className="w-2/3 flex flex-col">
-          <div className="flex mb-14">
+          <div className="flex mb-14 mr-5">
             <div className="max-w-96 max-h-56">
               <AreaChart />
             </div>
-            <div>Div2</div>
+            <div>
+              <IconTextGenerator
+                heading="Your Transfers"
+                items={transfer}
+                setButton={true}
+              />
+            </div>
           </div>
 
           <div className="flex mb-20 gap-20">
@@ -73,11 +81,17 @@ function Dashboard() {
             <Card variations={<TryAurora />} isCustomInfo={false} />
           </div>
         </div>
-        <div className="w-1/3">
+        <div className="flex flex-col w-1/3 gap-11">
           <div className="max-w-96 max-h-56">
             <StackChart />
           </div>
-          <div></div>
+          <div>
+            <IconTextGenerator
+              heading="Your Transactions"
+              items={transactions}
+              setButton={true}
+            />
+          </div>
         </div>
       </div>
     </main>
